@@ -1,9 +1,10 @@
 "use strict";
 
 const express = require("express");
-
 const app = express();
+var compression = require('compression');
 
+app.use(compression())
 app.set("views", "view");
 app.set("view engine", "ejs");
 
