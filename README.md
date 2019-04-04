@@ -1,43 +1,63 @@
-# Project 2 @cmda-minor-web · 2018-2019
+# Project 2 | Volkswagen | Valtech
 
-- caching
-- critical css
-- defer unused css
-- visible text while webfonts are loading
-- review colors
-- PWA (service worker)
+In deze readme staat mijn onderzoek naar de performance en accesibility van de [volkswagen](www.volkswagen.nl)
 
-## Aanbevelingen voor een robuste, toegankelijke en snelle web toepassing
+![volkswagen](<volkswagen/Screenshot 2019-04-04 at 17.42.32.png>)
 
-Het project vindt plaats bij in ons eigen lokaal. Maandagochtend is om 9.30 uur de kickoff (bij de oprachtgever), vrijdag zijn de presentaties van de resultaten (bij de opdrachtgever). In een week bouwt iedere student een eigen prototype ter onderbouwing van aanbevelingen aan de opdrachtgevers (Valtech, Mirabeau & CMD Amsterdam). De aanbevelingen betreffen het verbeteren van toegankelijkheid en performance van de web sites / applicaties. Technieken geleerd bij [Browser Technologies](https://github.com/cmda-minor-web/browser-technologies-1819) en [Performance Matters](https://github.com/cmda-minor-web/performance-matters-1819) worden toegepast bij het bouwen van de de prototypes en et schrijven van de aanbevelingen.
+## Audit Volkswagen.nl
 
-## Programma
-Maandag - 9.30 - kickoff
-Woensdag - voortgangbespreking
-Vrijdag presentatie
+![volkswagen](<volkswagen/volkswagen/Screenshot 2019-04-02 at 14.12.40.png>)
+![volkswagen](<volkswagen/volkswagen/Screenshot 2019-04-02 at 14.12.54.png>)
+![volkswagen](<volkswagen/volkswagen/Screenshot 2019-04-02 at 14.27.16.png>)
 
-## Werkwijze en Criteria
-### Werkwijze
-Full-time week werken aan optimaliseren van toegankelijkheid en performance van een website. Vrijdag is de pitch! Student laat zien dat hij/zij de vakken [Browser Technologies](https://github.com/cmda-minor-web/browser-technologies-1819) en [Performance Matters](https://github.com/cmda-minor-web/performance-matters-1819) begrijpt en beheerst.
+**punten die mij zijn opgevallen**
 
-Iedere dag zijn er coaches aanwezig voor coaching en feedback. We sluiten de dag af met een stand up, om de status door te spreken. Waar ben je mee bezig? Loop je ergens vast of heb je hulp nodig? Waar sta je?
+- First meaningfull paint
+- Font display
+- Images
+- Kleur contrast
+- Tabben door de pagina
 
-### Beoordeling
-Tijdens de beoordeling krijg je feedback op het resultaat en op je functioneren. De vakdocenten kijken naar je code en beoordelen In hoeverre je in het project laten zien dat je de bijhorende vakken beheerst en goed hebt toegepast. De opdrachtgver is geïnteresseerd in hoeverre je oplossing voldoet aan de eisen die zijzelf stellen aan hun producten. Misschien laat je wel wat zien waar ze zelf nog niet aan gedacht hebben?
+## First meaningfull paint
 
-Het project telt als AVV mee met de Meesterproef.
+**POC zonder de critical css**
+![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-03 at 11.49.36.png>)
+![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-03 at 11.48.54.png>)
 
-### Feedback over functioneren
-Je hebt een leergierig, gedreven en zelfredzame houding nodig om de minor te kunnen halen. Welke vaardigheden heb je laten zien? Onderzoekend vermogen? Creativiteit? Conceptueel? In hoeverre komen je houding en verworven vaardigheden overeen met wat een frontender in de praktijk nodig heeft?
+De firstmeaningfull paint heb ik kunnen verbeteren door de critical css van de pagina in de head te zetten. De firstmeaningfull paint is de eerste relevante content die de gebruiker te zien krijgt, wanneer hij een pagina bezoekt.
 
-### Browser Technologies
-In het vak [Browser Technologies](https://github.com/cmda-minor-web/browser-technologies-1819)) heb je geleerd wat de core functionalitiet van een web toepassing is en hoe je deze functionaliteit met progressive enhancement kan opbouwen tot een robuste web teopassing. Ook heb je geleerd hoe hiermee de toegankelijkheid van een web toepassing kan worden verbeterd. 
+Wat de critical css doet is dat de pagina, meteen de styling toont wanneer de html wordt ingeladen. Waardoor het css bestand de weergave niet blokkeerd. Dit heb ik gedaan door de css door een [critical css](https://jonassebastianohlsson.com/criticalpathcssgenerator/) generator te gooien. Het is wel belangrijk de @font-family uit de critical css te gooien, omdat dit niet helpt als je langzaam internet hebt, waardoor het weer geblokkeerd wordt.
 
-### Performance Matters
-In het vak [Performance Matters](https://github.com/cmda-minor-web/performance-matters-1819) heb je geleerd hoe je een web toepassing (ogenschijnlijk) sneller kan maken en ook offline kan laten werken. Hiermee verbeter je de gebruikservaring van de web toepassing in alle omstandigheden.  
+Ook heb ik een aantal scripts uit de head verplaatst naar het einde van de body, omdat deze het renderen van de pagina blokkeerden. Alleen weet ik niet of dit mogelijk is in het cms.
 
+**POC na het toepassen van de critical css**
+![volkswagen](<volkswagen/volkswagen-poc-critical-css/Screenshot 2019-04-03 at 12.25.07.png>)
+![volkswagen](<volkswagen/volkswagen-poc-critical-css/Screenshot 2019-04-03 at 12.24.49.png>)
 
-### Oplevering & criteria
-- Presentatie met je bevindingen bij de opdrachtgever. 
-- Github met je code en readme.
+## Font-display: swap
 
+Wanneer het font nog niet helemaal ingeladen is, is de tekst op de pagina nog niet zichtbaar. Dit kun je oplossen door font-display swap toe te voegen. Waar je op moet letten is dat het fallback font anders kan zijn kwa formaat dan het orginele font. Hierdoor kan er text verspringen, maar dit kan je verbeteren door een [font style matcher](https://meowni.ca/font-style-matcher/) te gebruiken.
+
+```
+@font-face {
+    font-family: VWHeadWeb;
+    src: url(../fonts/VW-PKW/VWHeadWeb-Bold.woff2) format("woff2");
+    font-display: swap;
+    font-weight: 700;
+    font-style: normal;
+}
+```
+
+**POC zonder font-display: swap**
+![volkswagen](<volkswagen/volkswagen-poc-font-optimalisatie/swap/Screenshot 2019-04-04 at 18.47.18.png>)
+
+**POC met font-display: swap**
+![volkswagen](<volkswagen/volkswagen-poc-font-optimalisatie/swap/Screenshot 2019-04-04 at 18.48.00.png>)
+
+Ook heb ik de fonts gepreload, waardoor de gebruiker deze eerder binnen krijgt. De performance wordt hierdoor niet echt verbeterd, maar de gebruiker krijgt wel het gevoel dat het allemaal wat sneller gaat.
+
+## Images
+
+## Kleur contrast
+
+## Tabben door de pagina
