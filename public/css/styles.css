@@ -218,7 +218,7 @@ textarea {
 
 ::-webkit-input-placeholder {
     color: inherit;
-    opacity: .54
+    opacity: 1
 }
 
 ::-webkit-file-upload-button {
@@ -273,19 +273,6 @@ textarea {
     display: block
 }
 
-.slick-track:after,
-.slick-track:before {
-    content: "";
-    display: table
-}
-
-.slick-track:after {
-    clear: both
-}
-
-.slick-loading .slick-track {
-    visibility: hidden
-}
 
 .slick-slide {
     float: left;
@@ -303,7 +290,7 @@ textarea {
 }
 
 .slick-slide.slick-loading img {
-    display: none
+    display: block
 }
 
 .slick-slide.dragging img {
@@ -1866,7 +1853,7 @@ hr {
 
 .c-image--init-lazy-load:not(.has-lazy-loaded),
 .c-image.is-lazy-loading {
-    opacity: 0
+    opacity: 1 !important;
 }
 
 .c-label {
@@ -2013,7 +2000,7 @@ hr {
     }
 
     to {
-        opacity: 0;
+        opacity: 1;
         -webkit-transform: translate(-50%, -50%) scale(1);
         transform: translate(-50%, -50%) scale(1)
     }
@@ -2026,7 +2013,7 @@ hr {
     }
 
     to {
-        opacity: 0;
+        opacity: 1;
         -webkit-transform: translate(-50%, -50%) scale(1);
         transform: translate(-50%, -50%) scale(1)
     }
@@ -2513,7 +2500,7 @@ input[type=range]::-ms-tooltip {
 
 .c-tooltip__bubble {
     display: none;
-    opacity: 0;
+    opacity: 1;
     position: absolute;
     z-index: 102;
     bottom: 100%;
