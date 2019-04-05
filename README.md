@@ -31,7 +31,7 @@ Ook heb ik een aantal scripts uit de head verplaatst naar het einde van de body,
 ### POC zonder de critical css
 
 ![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-03 at 11.49.36.png>)
-![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-05 at 09.31.17.png>)
+![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-05 at 09.39.06.png>)
 
 ### POC na het toepassen van de critical css
 
