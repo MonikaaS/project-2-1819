@@ -27,7 +27,7 @@ app.use(express.static('public'))
 
 app.get("/", index)
 
-app.listen(8808);
+app.listen(process.env.PORT || 8808)
 // app.listen(process.env.PORT || 3000)
 console.log("Server is Listening on port 8808");
 
