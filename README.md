@@ -31,12 +31,12 @@ Ook heb ik een aantal scripts uit de head verplaatst naar het einde van de body,
 ### POC zonder de critical css
 
 ![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-03 at 11.49.36.png>)
-![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-03 at 11.48.54.png>)
+![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-05 at 09.08.26.png>)
 
 ### POC na het toepassen van de critical css
 
 ![volkswagen](<volkswagen/volkswagen-poc-critical-css/Screenshot 2019-04-03 at 12.25.07.png>)
-![volkswagen](<volkswagen/volkswagen-poc-font-optimalisatie/swap/Screenshot 2019-04-04 at 18.48.00.png>)
+![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-04 at 18.48.00.png>)
 
 ## Font-display: swap
 
@@ -53,10 +53,10 @@ Wanneer het font nog niet helemaal ingeladen is, is de tekst op de pagina nog ni
 ```
 
 **POC zonder font-display: swap**
-![volkswagen](<volkswagen/volkswagen-poc-font-optimalisatie/swap/Screenshot 2019-04-04 at 18.48.00.png>)
+![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-04 at 18.48.00.png>)
 
 **POC met font-display: swap**
-![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-03 at 12.05.29.png>)
+![volkswagen](<volkswagen/volkswagen-poc-font-optimalisatie/swap/Screenshot 2019-04-05 at 09.30.03.png>)
 
 Ook heb ik de fonts gepreload, waardoor de gebruiker deze eerder binnen krijgt. De performance wordt hierdoor niet echt verbeterd, maar de gebruiker krijgt wel het gevoel dat het allemaal wat sneller gaat.
 
@@ -68,7 +68,7 @@ Op de website van volkswagen worden veel afbeeldingen gebruikt. Zelf wordt er al
 Webp wordt nog niet door alle browsers ondersteunt, maar je kan er altijd nog een fallback naar .jpg voor geven.
 
 **browser support:**
-![volkswagen](<volkswagen/volkwagen-poc-images/Screenshot 2019-04-05 at 08.05.14>)
+![volkswagen](<volkswagen/volkwagen-poc-images/Screenshot 2019-04-05 at 08.05.14.png>)
 
 **toepassing van webp**
 
@@ -81,14 +81,14 @@ Webp wordt nog niet door alle browsers ondersteunt, maar je kan er altijd nog ee
 ```
 
 **voor webp**
-![volkswagen](<volkswagen/volkwagen-poc-images/Screenshot 2019-04-05 at 08.12.20>)
+![volkswagen](<volkswagen/volkwagen-poc-images/Screenshot 2019-04-05 at 08.12.20.png>)
 
 **na webp**
-![volkswagen](<volkswagen/volkwagen-poc-images/Screenshot 2019-04-05 at 08.12.06>)
+![volkswagen](<volkswagen/volkwagen-poc-images/Screenshot 2019-04-05 at 08.12.06.png>)
 
 ## Kleur contrast
 
-![volkswagen](<volkswagen/kleuren/Screenshot 2019-04-05 at 08.21.19>)
+![volkswagen](<volkswagen/kleuren/Screenshot 2019-04-05 at 08.21.19.png>)
 Uit de audit kwam naar voren dat de blauwe kleur die gebruikt wordt, geen hoog genoeg contrast heeft.
 
 Ik heb dit nog even getest in de website [color.review](https://color.review/check/00B1EB-FFFFFF)
