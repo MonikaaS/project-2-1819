@@ -109,13 +109,42 @@ Ik heb daarom de kleur naar 4.5 gebracht naar een wat donkerdere blauw: `#0077D8
 Voor gebruikers die om 1 of andere reden alleen maar kunnen tabben, is semantische html erg belangrijk. Ik merkte zelf namelijk dat je als gebruiker niet overal bij kunt en je krijgt ook niet altijd feedback van waar je zit, als je aan het tabben bent.
 
 Het eerste wat mij opviel, was de `meer` knop. Die kun je als je tabt niet selecteren.
-![volkswagen](<volkswagen/tabben/Screenshot 2019-04-05 at 08.53.58.png>)
+![volkswagen](<volkswagen/volkwagen-poc-images/Screenshot 2019-04-05 at 10.57.09.png>)
+
+dit kun je simpel oplossen door een lege link toe te voegen aan je a atribuut.
+
+```
+<a class="header-block__primary-navigation-link header-block__primary-navigation-link--more js-header-block__primary-navigation-link--more" href="#">
+<span>Meer</span>
+```
+
+![volkswagen](<volkswagen/volkwagen-poc-images/Screenshot 2019-04-05 at 10.57.09.png>)
 
 Ook zijn labels als ontdek meer, niet echt duidelijk voor mensen die gebruik maken van screenreaders.
 ![volkswagen](<volkswagen/tabben/Screenshot 2019-04-05 at 08.36.05.png>)
 
 Aanmelden voor de nieuwsbrief, waarbij je alleen maar aanmelden te horen krijgt.
 ![volkswagen](<volkswagen/tabben/Screenshot 2019-04-05 at 08.59.59.png>)
+
+Vervolgens ben ik ook nog focus styles gaan toevoegen door het volgende in de css te zetten:
+
+```
+*:focus {
+    border: .1em solid rgb(216, 166, 0);
+}
+
+* {
+    border: .1em solid transparent;
+}
+
+.m-button-group__buttons {
+    border: .1em solid transparent;
+}
+
+.m-button-group__buttons:focus {
+    border: .1em solid rgb(216, 166, 0);
+}
+```
 
 En nog een kleine opservatie:
 Als je verder tabt aan het einde van de pagina, ga je vervolgens door naar cookies die nog geaccepteerd moeten worden.

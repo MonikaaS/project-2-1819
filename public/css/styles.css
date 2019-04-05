@@ -1,14 +1,6 @@
 /** * pon-universe-web-components - Front-end workflow for Pon Universe projects. * @version v1.0.0 * @link http://m.volkswagen.nl * @license ISC */
 @charset "UTF-8";
 
-*:focus {
-    border: .1em solid rgb(216, 166, 0);
-}
-
-* {
-    border: .1em solid transparent;
-}
-
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 html {
     font-family: sans-serif;
@@ -15259,4 +15251,20 @@ html.is-in-experience-editor .trimline-cards-block__slider-row>.o-column.scEnabl
     .row {
         max-width: none
     }
+}
+
+*:focus {
+    border: .1em solid rgb(216, 166, 0);
+}
+
+* {
+    border: .1em solid transparent;
+}
+
+.m-button-group__buttons {
+    border: .1em solid transparent;
+}
+
+.m-button-group__buttons:focus {
+    border: .1em solid rgb(216, 166, 0);
 }
