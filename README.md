@@ -56,7 +56,7 @@ Wanneer het font nog niet helemaal ingeladen is, is de tekst op de pagina nog ni
 ![volkswagen](<volkswagen/volkswagen-poc-basis/Screenshot 2019-04-04 at 18.48.00.png>)
 
 **POC met font-display: swap**
-![volkswagen](<volkswagen/volkswagen-poc-font-optimalisatie/swap/Screenshot 2019-04-05 at 09.30.03.png>)
+![volkswagen](<volkswagen/volkswagen-poc-font-optimalisatie/swap/Screenshot 2019-04-05 at 09.41.16.png>)
 
 Ook heb ik de fonts gepreload, waardoor de gebruiker deze eerder binnen krijgt. De performance wordt hierdoor niet echt verbeterd, maar de gebruiker krijgt wel het gevoel dat het allemaal wat sneller gaat.
 
